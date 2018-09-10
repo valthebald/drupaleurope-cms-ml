@@ -34,24 +34,9 @@
 				<!-- Keep one of this slides depends on the track -->
 				<section>
 					<section class="sponsor">
-						<div class="track"><img src="drupal-europe/img/tracks/infrastructure.png">DevOps + Infrastructure</div>
-						Track supported by
-						<img src="drupal-europe/img/sponsors/ddev.png">
-					</section>
-					<section class="sponsor">
-						<div class="track"><img src="drupal-europe/img/tracks/digital_transformation.png">Digital Transformation + Enterprise</div>
-						Track supported by
-						<img src="drupal-europe/img/sponsors/acquia.png">
-					</section>
-					<section class="sponsor">
 						<div class="track"><img src="drupal-europe/img/tracks/infrastructure.png">Drupal + Technology</div>
 						Track supported by
 						<img src="drupal-europe/img/sponsors/platformsh.png">
-					</section>
-					<section class="sponsor">
-						<div class="track"><img src="drupal-europe/img/tracks/government.png">Government</div>
-						Track supported by
-						<img src="drupal-europe/img/sponsors/degov.png">
 					</section>
 				</section>
 
@@ -60,7 +45,11 @@
 					<h1>Content management in AI-driven world</h1>
 					<h2><a href="//bit.ly/drupaleurope-ml">bit.ly/ffwbg-ml</a></h2>
 					<aside class="public-notes">Drupal + Technology</aside>
-					<aside class="notes">Speaker notes</aside>
+					<aside class="notes"><pre>
+						Slides are hosted on github, press 's' if you want to read speaker notes too.
+						All links mentioned in the presentation will be posted in the last slide
+					</pre>
+					</aside>
 				</section>
 				<!-- Speakers -->
 				<section class="speakers">
@@ -71,6 +60,96 @@
 						<div class="twitter">valthebald</div>
 					</div>
 				</section>
+
+				<!-- Regular list slide -->
+				<section class="slide">
+					<h1>Agenda</h1>
+
+					<ul>
+						<li class="fragment">What is machine learning</li>
+						<li class="fragment">Task types</li>
+						<li class="fragment">Neural networks</li>
+						<li class="fragment">Stochastic gradient descent</li>
+						<li class="fragment">Online learning</li>
+						<li class="fragment">References</li>
+					</ul>
+					<aside class="notes"><pre>
+        This short introduction is inspired by the excellent coure of Stanford University,
+        available online (link will be in the references section).
+    </pre></aside>
+				</section>
+				<!-- Regular slide -->
+
+				<section class="slide">
+					<h1>Agenda</h1>
+
+					<h2>What we will <em>not</em> discuss</h2>
+
+					<ul>
+						<li>Use of commercial APIs</li>
+						<li>Auto tagging</li>
+						<li class="fragment">When robots will take over the world</li>
+						<li class="fragment">Magic</li>
+					</ul>
+					<aside class="notes"><pre>
+Since machine learning is a very wide topic, we will be able to discuss only small part of it.
+Luckily, there are many resources, including Drupal-specific, that can help you in using ML in your everyday activity
+So first, we will skip ready, commercial APIs from companies like Google (Cloud API), or MicroSoft (Azure Cognitive Services).
+Both have Drupal modules and work with either pretrained or DIY data sets, for the real life examples of integrating Google SDKs with local
+news service Patch.com you can watch Pantheon's webinar (link in the end).
+
+We also will not talk about tasks that have known solutions, and even Drupal modules - for the list of those I recommend reading OpenSense post
+on top Drupal modules that use AI.
+
+In other words, let's jump to the land of unknown, and start from the basics - what is machine learning
+    </pre></aside>
+				</section>
+
+
+				<section class="quote">
+					<blockquote>Field of study that gives computers the ability to learn without being explicitly programmed</blockquote>
+					<small class="author">Arthur Samuel</small>
+					<aside class="notes"><pre>
+						Here's one of the first definitions of machine learning.
+						Being intuitive, it doesn't give us much idea of where to start from
+						</pre>
+					</aside>
+				</section>
+
+
+				<section class="quote">
+				<blockquote style="font-size:100%">A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.</blockquote>
+					<small class="author">Tom Mitchell</small>
+					<aside class="notes"><pre>
+						This one is more "formal". Let's now understand what are variable E, T, and P
+						</pre>
+				</section>
+
+				<section>
+					<h2>The task: CTR</h2>
+
+					Umami image here
+
+					<h3>Variables</h3>
+					<ul>
+						<li>Visitor demographics (country/language)</li>
+						<li>Time (weekday/hour)</li>
+						<li>Previous history of actions</li>
+						<li>Current page data (taxonomy)</li>
+						<li>Update date of the content</li>
+					</ul>
+
+					<aside class="notes"><pre>
+						Let's imagine you build a site with multiple pages. You can have different monetizing models: you can sell items,
+						profit from advertiser, or get financed by some government organisation based on your traffic numbers.
+						You have a lot of items to "sell" to the customer (in quotes because money is not always involved in the process),
+						and you constantly adding new items.
+
+						From the other side,
+					</pre>
+					</aside>
+				</section>
+
 				<!-- Section -->
 				<section class="section">
 					<h1>Title</h1>
@@ -110,6 +189,15 @@
     "license": "GPL-2.0-or-later"
 }
 					</code></pre>
+				</section>
+
+				<section class="slide">
+					<h1>Resources</h1>
+
+					<ul>
+						<li><a href="https://pantheon.io/resources/artificial-intelligence-your-cms">Artificial intelligence and your CMS</a></li>
+						<li><a href="https://opensenselabs.com/blog/tech/top-2018-drupal-modules-using-artificial-intelligence">Top Drupal modules using AI</a> </li>
+					</ul>
 				</section>
 			</div>
 		</div>
