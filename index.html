@@ -30,21 +30,14 @@
 					<img data-src="drupal-europe/img/logo-white.png" class="no-frame">
 					<a href="https://www.drupaleurope.org">www.drupaleurope.org</a>
 				</section>
-				<!-- Track sponsor slide -->
-				<!-- Keep one of this slides depends on the track -->
-				<section>
-					<section class="sponsor">
-						<div class="track"><img src="drupal-europe/img/tracks/infrastructure.png">Drupal + Technology</div>
-						Track supported by
-						<img src="drupal-europe/img/sponsors/platformsh.png">
-					</section>
-				</section>
 
 				<!-- Session title -->
 				<section class="title">
 					<h1>Content management in AI-driven world</h1>
 					<h2><a href="//bit.ly/drupaleurope-ml">bit.ly/ffwbg-ml</a></h2>
-					<aside class="public-notes">Drupal + Technology</aside>
+					<div class="track">Drupal + Technology</div>
+							<img class="no-frame" src="drupal-europe/img/sponsors/platformsh.png" alt="Platform.sh" />
+
 					<aside class="notes"><pre>
 						Slides are hosted on github, press 's' if you want to read speaker notes too.
 						All links mentioned in the presentation will be posted in the last slide
@@ -53,10 +46,11 @@
 				</section>
 				<!-- Speakers -->
 				<section class="speakers">
+					<h1>About me</h1>
 					<div class="speaker">
 						<img src="media/valthebald.jpg" class="speaker">
 						<h2>Valery "valthebald" Lourie</h2>
-						<div class="role">Drupal Developer</div>
+						<div class="role">Drupal Developer, FFW Agency</div>
 						<div class="twitter">valthebald</div>
 					</div>
 				</section>
@@ -64,7 +58,7 @@
 				<!-- Regular list slide -->
 				<section class="slide">
 					<h1>Agenda</h1>
-
+					<h2>What we <em>will</em> discuss</h2>
 					<ul>
 						<li class="fragment">What is machine learning</li>
 						<li class="fragment">Task types</li>
@@ -125,10 +119,244 @@ In other words, let's jump to the land of unknown, and start from the basics - w
 						</pre>
 				</section>
 
-				<section>
-					<h2>The task: CTR</h2>
+				<section class="slide">
+					<img src="media/umami.png" class="no-frame" alt="Umami" />
 
-					Umami image here
+					<aside class="notes"><pre>
+						Let's imagine you build a site with multiple pages. You can have different monetizing models: you can sell items,
+						profit from advertiser, or get financed by some government organisation based on your traffic numbers.
+						You have a lot of items to "sell" to the customer (in quotes because money is not always involved in the process),
+						and you constantly adding new items.
+
+						You have few areas where you list important (from your PoV) items: top menu, featured block etc.
+						You can even measure performance of those items using A/B testing tools.
+
+						But if you a new item with no known performance, how do you decide whether to replace existing featured items? Let's try
+						to formulate the question in the terms of the previous slide.
+
+						T - measuring and preficting performance (CTR, amount of purchases, total sales of item)
+						E - data collected from analytics data or/and webserver log analysis
+						P - difference between predicted and actual performance.
+					</pre>
+					</aside>
+				</section>
+
+
+				<section class="slide">
+					<h1>Supervised learning</h1>
+					<h2>We know "correct" values</h2>
+
+					<ul>
+						<li>Regression</li>
+						<li>Classification</li>
+					</ul>
+
+					<aside class="notes"><pre>
+						Before digging into Umami dilemma, let's first talk about machine learning tasks types.
+						One big group of tasks is supervised learning. It's when our experimental data E is "labelled",
+						i.e. for every item in E we know "correct" value - i.e. what is CTR.
+            Regression - predicted values are within continious range, i.e.
+            Given a picture of Male/Female, We have to predict his/her age on the basis of given picture.
+            Classification - predicted value is boolean, i.e. given a picture of Male/Female, We have to predict Whether He/She is of High school, College, Graduate age. Another Example for Classification - Banks have to decide whether or not to give a loan to someone on the basis of his credit history.
+        </pre></aside>
+				</section>
+
+				<section class="slide">
+					<h1>Unsupervised learning</h1>
+					<h2>Unlabeled data</h2>
+
+					<ul>
+						<li>Clustering</li>
+						<li>Dimension reduction</li>
+						<li>Anomaly detection</li>
+					</ul>
+
+					<aside class="notes"><pre>
+            Clustering - group unlabeled data into clusters of values
+			Dimension reduction -
+
+        </pre></aside>
+				</section>
+
+				<section class="slide">
+					<h1>E - experimental data</h1>
+
+					<h2>Features</h2>
+					<ul>
+						<li>Visitor demographics (country/language)</li>
+						<li>Time (weekday/hour)</li>
+						<li>Previous history of actions</li>
+						<li>Current page data (taxonomy)</li>
+						<li>Update date of the content</li>
+					</ul>
+
+					<h2>Labels</h2>
+
+					<ul>
+						<li>Time on page</li>
+						<li>CTR</li>
+						<li>Probability of purchase</li>
+						<li>Average purchase amount</li>
+					</ul>
+
+					<aside class="notes"><pre>
+
+					</pre>
+					</aside>
+				</section>
+
+				<section class="section">
+					<h2>Learning flow</h2>
+
+					<img class="no-frame" src="media/training_flow.png" alt="Training flow" />
+
+					<aside class="notes">Hypothesis and cost functions</aside>
+				</section>
+
+				<section class="section">
+					<h1>Linear regression</h1>
+					<h2>Hypothesis</h2>
+					h = &theta;<sub>0</sub> + &theta;<sub>1</sub> * X
+					<img class="no-frame" src="media/house_prices.png" alt="Housing prices" />
+
+
+				</section>
+
+				<section class="slide">
+					<h2>Linear regression</h2>
+
+					<img class="no-frame" src="media/house_prices.png" alt="Housing prices" />
+
+					<h3>Hypothesis</h3>
+
+					h = &theta;<sub>0</sub> + &theta;<sub>1</sub> * X
+				</section>
+
+				<section class="section">
+					<h2>Linear regression</h2>
+
+					<h3>Hypothesis</h3>
+
+					h = &theta;<sub><small>0</small></sub> + &theta;<sub><small>1</small></sub> * X
+
+					<h3>Cost function</h3>
+
+					<img class="no-frame" src="media/cost_linear.png" alt="Cost function" />
+
+					<aside class="notes">
+						m - number of samples in the training set.
+					</aside>
+				</section>
+
+
+				<section class="section">
+					<h2>Gradient descent</h2>
+
+					<img class="no-frame" src="media/descent.png" /><br/>
+				</section>
+
+				<section class="slide">
+					<h2>Gradient descent</h2>
+
+					<img class="fragment no-frame" src="media/descent_formula.png" alt="Cost function" /><br/>
+
+					<h4 class="fragment">Repeat until convergence</h4>
+
+					<img class="fragment no-frame" src="media/derivative_linear.png" />
+
+					<aside class="notes">
+						m - number of samples in the training set.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Classification problem</h2>
+
+					<img src="media/sigmoid_formula.png" />
+
+					<img src="media/sigmoid.png">
+				</section>
+
+				<section>
+					<h2>More features!</h2>
+
+					<img src="media/linear_vectorized.png" />
+
+					<aside class="notes">
+						Adding more features is also a way to have non-linear members in the equation,
+						i.e. add x**2, sqrt(x), ln(x) etc. as separate features.
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>Less features!</h2>
+
+					<img src="media/linear_regular.png" />
+
+					<aside class="notes">
+						Let's penalize new features!
+						Better way to use/select non-linear features is to use layered structure (neural networks),
+						that can itself learn importance of certain feature combinations.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Bias vs variance</h2>
+
+					<img src="media/bias_overfitting.png" alt="Bias vs variance" />
+
+					<aside>
+						High bias (underfitting): high cost for all sets
+						High variance (overfitting): low cost for training set, cost for test set much higher
+					</aside>
+				</section>
+
+				<section>
+
+					<h2>Validating the model</h2>
+
+					<ul>
+						<li>Training set: 60%</li>
+						<li>Cross validation set: 20%</li>
+						<li>Test set: 20%</li>
+					</ul>
+
+					<ol>
+						<li>Optimize the parameters in Θ using the training set for each polynomial degree.</li>
+						<li>Find polynomial degree with least error using cross validation</li>
+						<li>Estimate generalization error using test set</li>
+					</ol>
+
+				</section>
+
+				<section>
+					<h2>Working with large data set</h2>
+
+					<h3>Stochastic gradient descent</h3>
+
+					<ul>
+						<li>Shuffle training set</li>
+						<li>Perform gradient descent for single example</li>
+						<li>Choose low &alpha;!</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Working with large data set</h2>
+
+					<h3>Online learning</h3>
+
+					<ul>
+						<li>Process training examples as they go</li>
+						<li>Adjust parameters &theta; after every example</li>
+						<li>Throw examples immediately</li>
+						<li class="fragment">Bonus: adjust to changing users preferences</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>The task: what's missing?</h2>
 
 					<h3>Variables</h3>
 					<ul>
@@ -139,57 +367,39 @@ In other words, let's jump to the land of unknown, and start from the basics - w
 						<li>Update date of the content</li>
 					</ul>
 
-					<aside class="notes"><pre>
-						Let's imagine you build a site with multiple pages. You can have different monetizing models: you can sell items,
-						profit from advertiser, or get financed by some government organisation based on your traffic numbers.
-						You have a lot of items to "sell" to the customer (in quotes because money is not always involved in the process),
-						and you constantly adding new items.
-
-						From the other side,
-					</pre>
-					</aside>
+					<h3>Split test and feedback</h3>
 				</section>
 
-				<!-- Section -->
-				<section class="section">
-					<h1>Title</h1>
-					<h2>Subtitle</h2>
-				</section>
-				<!-- Quote -->
-				<section class="quote">
-					<blockquote>Lorem ipsum dolor</blockquote>
-					<small class="author">Dries</small>
-				</section>
-				<!-- Regular slide -->
-				<section class="slide">
-					<h1>Title</h1>
-					<h2>SubTitle</h2>
-					Lorem ipsum dolor.
-				</section>
-				<!-- Regular list slide -->
-				<section class="slide">
-					<h1>Title</h1>
-					<h2>SubTitle</h2>
+				<section>
+					<h2>The task: what's missing?</h2>
+
+					<h3>Variables</h3>
 					<ul>
-						<li>List item 1</li>
-						<li>List item 2</li>
-						<li>List item 3</li>
-						<li>List item 4</li>
+						<li>Visitor demographics (country/language)</li>
+						<li>Time (weekday/hour)</li>
+						<li>Previous history of actions</li>
+						<li>Current page data (taxonomy)</li>
+						<li>Update date of the content</li>
 					</ul>
 				</section>
-				<!-- Regular slide -->
-				<section class="slide">
-					<h1>Title</h1>
-					<h2>SubTitle</h2>
-					<pre><code>
-{
-    "name": "drupal/core",
-    "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-    "type": "drupal-core",
-    "license": "GPL-2.0-or-later"
-}
-					</code></pre>
+
+				<section>
+					<h2>Questions?</h2>
+					<ul>
+						<li><a href="https://www.coursera.org/learn/machine-learning">Machine learning on Coursera</a></li>
+						<li><a href="https://www.quora.com/What-is-the-difference-between-supervised-and-unsupervised-learning-algorithms">Quora on difference supervised vs non-supervised</a> </li>
+						<li><a href="https://www.gnu.org/software/octave/">Octave</a></li>
+						<li><a href="https://github.com/php-ai/php-ml">PHP-ML</a></li>
+					</ul>
 				</section>
+
+
+
+
+
+
+
+
 
 				<section class="slide">
 					<h1>Resources</h1>
